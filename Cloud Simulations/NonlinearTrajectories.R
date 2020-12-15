@@ -174,177 +174,40 @@ final.val <- lpi_null[dim(lpi_null)[1],1]
 final.val
 }
 
-#
-##
-###
-#### You are here
-###
-##
-#
 
+########################################################################
+
+############################################
+#                         	           #    
+#  Iterating the reshuffling null model    #
+#                               	   #
+############################################
+
+# NUmber of iterations
 iterations <- 100
+
+# Create a blank holder-matrix for the 6 assemblages (2 x Fluctuation intensity, 3 x trajectory shape)
 output.mat <- matrix(NA,nrow=iterations, ncol=6)
 
+# Iterate the null model in a loop
+# The text just adds a laple to the automatically generated plot to keep track of the simulation
 for (p in 1:iterations){
 	output.mat[p,1] <- null.mod(N_50l)
-		text(1995,1.9,paste("iteration = ",p, "val =1"))
+		text(1995,1.9,paste("iteration = ",p, "val = 1"))
 	output.mat[p,2] <- null.mod(N_100l)
-		text(1995,1.9,paste("iteration = ",p, "val =2"))
+		text(1995,1.9,paste("iteration = ",p, "val = 2"))
 	output.mat[p,3] <- null.mod(N_150l)
-		text(1995,1.9,paste("iteration = ",p, "val =3"))
+		text(1995,1.9,paste("iteration = ",p, "val = 3"))
 	output.mat[p,4] <- null.mod(N_50h)
-		text(1995,1.9,paste("iteration = ",p, "val =4"))
+		text(1995,1.9,paste("iteration = ",p, "val = 4"))
 	output.mat[p,5] <- null.mod(N_100h)
-		text(1995,1.9,paste("iteration = ",p, "val =5"))
+		text(1995,1.9,paste("iteration = ",p, "val = 5"))
 	output.mat[p,6] <- null.mod(N_150h)
-		text(1995,1.9,paste("iteration = ",p, "val =6"))
-
+		text(1995,1.9,paste("iteration = ",p, "val = 6"))
 }
 
+# Add column names to the iterated output
 colnames(output.mat) <- c("ConcaveL", "LinearL","ConvexL","ConcaveH", "LinearH","ConvexH")
+
+# Write the output to file, which can be imported to replicate Figure 4
 write.table(output.mat,file= "IterationOutput.txt",quote=T,sep="\t",row.names=F,col.names=T)
-
-
-#############################################
-
-
-
-#png(filename="FigureShape.png",width=24,height=8,units="cm",res=300)
-par(mfrow=c(2,3))
-par(mai=c(0.65,0.65,0.4,0.08))
-
-plot(0,0,ylim=c(0,120),  type="n", xlim=c(1970,2020), ylab= "Population", xlab="Year",las=1,  cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0))
-abline(h=100,col="grey")
-
-for(k in 1:S){
-lines(years,N_50l[k,], col=rgb(0,0,0.5,0.01))
-lines(years,N_100l[k,], col=rgb(0,0.8,0.8,0.01))
-lines(years,N_150l[k,], col=rgb(0.8,0.5,0,0.01))
-}
-
-lines(years,Ave_50l,col=rgb(0,0,0.5,1), lwd=2)
-lines(years,Ave_100l,col=rgb(0,0.8,0.8,1), lwd=2)
-lines(years,Ave_150l,col=rgb(0.8,0.5,0,1), lwd=2)
-mtext("a",cex=1.5, side = 3, adj = -0.15, line = 1, font=2)
-abline(h=40,col="grey",lty=2)
-
-
-
-
-######
-plot(0,0,type="n",las=1,xlim=c(1970,2020),
-     ylim=c(0,1.2),ylab="LPI (1970 = 1)",xlab="Year", cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0))
-# Add baseline
-abline(h=1,col="grey")
-
-
-# Include error bars as polygons
-polygon(c(seq(1970,2020),seq(2020,1970)), 
-    c(lpi_50l$CI_low,rev(lpi_50l$CI_high)),col=rgb(0,0,0.5,0.3),border=NA)
-# Include error bars as polygons
-polygon(c(seq(1970,2020),seq(2020,1970)), 
-    c(lpi_100l$CI_low,rev(lpi_100l$CI_high)),col=rgb(0,0.8,.8,0.3),border=NA)
-# Include error bars as polygons
-polygon(c(seq(1970,2020),seq(2020,1970)), 
-    c(lpi_150l$CI_low,rev(lpi_150l$CI_high)),col=rgb(1,.8,0,0.3),border=NA)
-
-# Add mean line
-lines(c(1970:2020),lpi_50l$LPI_final,col=rgb(0,0,0.5,1),lwd=2)
-lines(c(1970:2020),lpi_100l$LPI_final,col=rgb(0,0.8,0.8,1),lwd=2)
-lines(c(1970:2020),lpi_150l$LPI_final,col=rgb(1,0.8,0,1),lwd=2)
-#legend("bottomleft",lty=1,col=c("darkgreen","darkblue","darkred"),c("N = 150","N = 100", "N = 50"))
-#text(1970,1.2,"(c)",cex=2)
-
-mtext("b",cex=1.5, side = 3, adj = -0.15, line = 1,font=2)
-abline(h=.40,col="grey",lty=2)
-
-
-hist(output.mat[,1], xlim=c(0,1),breaks=seq(0,1,l=51),border=rgb(0,0,0.5,1),
-	las=1,col=rgb(0,0,0.5,0.2), main="",ylab="Frequency", xlab="LPI in 2020 (1970 = 1)",
-	cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0), prob=T)
-
-hist(output.mat[,2],axes=F,breaks=seq(0,1,l=51),
-	border=rgb(0,0.8,0.8,1),col=rgb(0,0.8,0.8,0.2), main="",ylab="", xlab="", prob=T,add=T)
-
-hist(output.mat[,3],axes=F,breaks=seq(0,1,l=51),
-	border=rgb(1,0.8,0,1),col=rgb(1,0.8,0,0.2), main="",ylab="", xlab="", prob=T,add=T)
-
-box()
-abline(v=0.4,lwd=2,lty=2,col="black")
-
-abline(v=lpi_50l$LPI_final[length(lpi_50l$LPI_final)],lwd=2,lty=1,col=rgb(0,0,0.5,1))
-abline(v=lpi_100l$LPI_final[length(lpi_100l$LPI_final)],lwd=2,lty=1,col=rgb(0,0.8,0.8,1))
-abline(v=lpi_150l$LPI_final[length(lpi_150l$LPI_final)],lwd=2,lty=1,col=rgb(1,0.8,0,1))
-
-mtext("c",cex=1.5, side = 3, adj = -0.15, line = 1,font=2)
-
-
-plot(0,0,ylim=c(0,120),  type="n", xlim=c(1970,2020), ylab= "Population", xlab="Year",las=1,  cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0))
-abline(h=100,col="grey")
-
-for(k in 1:S){
-lines(years,N_50h[k,], col=rgb(0,0,.5,0.01))
-lines(years,N_100h[k,], col=rgb(0,0.8,0.8,0.01))
-lines(years,N_150h[k,], col=rgb(1,0.8,0,0.01))
-}
-
-lines(years,Ave_50h,col=rgb(0,0,0.5,1), lwd=2)
-lines(years,Ave_100h,col=rgb(0,0.8,0.8,1), lwd=2)
-lines(years,Ave_150h,col=rgb(1,0.8,0,1), lwd=2)
-mtext("d",cex=1.5, side = 3, adj = -0.15, line = 1,font=2)
-abline(h=40,col="grey",lty=2)
-
-
-
-
-######
-plot(0,0,type="n",las=1,xlim=c(1970,2020),
-     ylim=c(0,1.2),ylab="LPI (1970 = 1)",xlab="Year", cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0))
-# Add baseline
-abline(h=1,col="grey")
-
-
-# Include error bars as polygons
-polygon(c(seq(1970,2020),seq(2020,1970)), 
-    c(lpi_50h$CI_low,rev(lpi_50h$CI_high)),col=rgb(0,0,0.5,0.3),border=NA)
-# Include error bars as polygons
-polygon(c(seq(1970,2020),seq(2020,1970)), 
-    c(lpi_100h$CI_low,rev(lpi_100h$CI_high)),col=rgb(0,0.8,0.8,0.3),border=NA)
-# Include error bars as polygons
-polygon(c(seq(1970,2020),seq(2020,1970)), 
-    c(lpi_150h$CI_low,rev(lpi_150h$CI_high)),col=rgb(1,0.8,0,0.3),border=NA)
-
-# Add mean line
-lines(c(1970:2020),lpi_50h$LPI_final,col=rgb(0,0,0.5,1),lwd=2)
-lines(c(1970:2020),lpi_100h$LPI_final,col=rgb(0,0.8,0.8,1),lwd=2)
-lines(c(1970:2020),lpi_150h$LPI_final,col=rgb(1,0.8,0,1),lwd=2)
-#legend("bottomleft",lty=1,col=c("darkgreen","darkblue","darkred"),c("N = 150","N = 100", "N = 50"))
-#text(1970,1.2,"(c)",cex=2)
-
-mtext("e",cex=1.5, side = 3, adj = -0.15, line = 1,font=2)
-abline(h=.40,col="grey",lty=2)
-
-
-hist(output.mat[,4], xlim=c(0,1),breaks=seq(0,1,l=51),border=rgb(0,0,0.5,1),
-	las=1,col=rgb(0,0,0.5,0.2), main="",ylab="Frequency", xlab="LPI in 2020 (1970 = 1)",
-	cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0), prob=T)
-
-hist(output.mat[,5],axes=F,breaks=seq(0,1,l=51),
-	border=rgb(0,0.8,0.8,1),col=rgb(0,0.8,0.8,0.2), main="",ylab="", xlab="", prob=T,add=T)
-
-hist(output.mat[,6],axes=F,breaks=seq(0,1,l=51),
-	border=rgb(1,0.8,0,1),col=rgb(1,0.8,0,0.2), main="",ylab="", xlab="", prob=T,add=T)
-
-box()
-abline(v=0.4,lwd=2,lty=2,col="black")
-
-abline(v=lpi_50h$LPI_final[length(lpi_50h$LPI_final)],lwd=2,lty=1,col=rgb(0,0,0.5,1))
-abline(v=lpi_100h$LPI_final[length(lpi_100h$LPI_final)],lwd=2,lty=1,col=rgb(0,0.8,0.8,1))
-abline(v=lpi_150h$LPI_final[length(lpi_150h$LPI_final)],lwd=2,lty=1,col=rgb(1,0.8,0,1))
-
-mtext("f",cex=1.5, side = 3, adj = -0.15, line = 1,font=2)
-
-
-
-#dev.off()
-
