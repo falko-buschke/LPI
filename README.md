@@ -32,13 +32,13 @@ This folder includes three scripts:
 
 There is a dedicated folder for each figure in the manuscript. The folder names refer to the relevant figure. Each foler also includes the code and input dataset required to replicate the figure. A copy of the figure is also included in the folder. There are 10 folders:
 
-* `Figure 1`: The Living Planet Index of fluctuating, but otherwise stable, populations. Relies on the file `LPISpace.txt`.
-* `Figure 2`: Starting population sizes of time-series added to the Living Planet Index between 1950 and 2015. Cannot be replicated without the data from the [Living Planet Database](http://stats.livingplanetindex.org/).
-* `Figure 3`: The effect of random fluctuations on the Living Planet Index, assuming stable populations on average. Requires the files `LPI_global_empirical.txt`, `LPI_global_drift1.txt`, `LPI_global_drift3.txt`, and `LPI_global_drift5.txt`.
-* `Figure 4`: The effect of random fluctuations on the Living Planet Index (LPI) for simulated declining populations. Requires the file `IterationOutputCurve.txt`
-* `Figure 5`: The distribution of the Living Planet Index (LPI) in 2016 for a null model that reshuffles population trajectories. Requires several output files for the different planetary systems and biogrographical realms.
-* `Figure S1`: The nine steps to calculating the Living Planet Index (LPI).
-* `Figure S2`: Generalised additive (GAM) for populations declining from 100 to 40 individuals.
-* `Figure S3`: Generalised additive (GAM) for populations increasing from 100 to 160 individuals.
-* `Figure S4`: The estimated LPI for otherwise stable populations that fluctuate by 1% (a), 3% (b) and 5% (c) each year. Requres several files for the different planetary systems and biogrographical realms. 
-* `Figure S5`: The reshuffling null model used to account for random population fluctuations.
+* `Figure1`: The Living Planet Index of fluctuating, but otherwise stable, populations. Relies on the file `LPISpace.txt`.
+* `Figure2`: Starting population sizes of time-series added to the Living Planet Index between 1950 and 2015. Cannot be replicated without the data from the [Living Planet Database](http://stats.livingplanetindex.org/).
+* `Figure3`: The effect of random fluctuations on the Living Planet Index, assuming stable populations on average. Requires the files `LPI_global_empirical.txt`, `LPI_global_drift1.txt`, `LPI_global_drift3.txt`, and `LPI_global_drift5.txt`.
+* `Figure4`: The effect of random fluctuations on the Living Planet Index (LPI) for simulated declining populations. Requires the file `IterationOutputCurve.txt`
+* `Figure5`: The distribution of the Living Planet Index (LPI) in 2016 for a null model that reshuffles population trajectories. Requires several output files for the different planetary systems and biogrographical realms.
+* `FigureS1`: The nine steps to calculating the Living Planet Index (LPI).
+* `FigureS2`: Generalised additive (GAM) for populations declining from 100 to 40 individuals.
+* `FigureS3`: Generalised additive (GAM) for populations increasing from 100 to 160 individuals.
+* `FigureS4`: The estimated LPI for otherwise stable populations that fluctuate by 1% (a), 3% (b) and 5% (c) each year. Requres several files for the different planetary systems and biogrographical realms. 
+* `FigureS5`: The reshuffling null model used to account for random population fluctuations.
