@@ -37,6 +37,11 @@ There is a dedicated folder for each figure in the manuscript. The folder names 
 * `Figure3`: The effect of random fluctuations on the Living Planet Index, assuming stable populations on average. Requires the files `LPI_global_empirical.txt`, `LPI_global_drift1.txt`, `LPI_global_drift3.txt`, and `LPI_global_drift5.txt`.
 * `Figure4`: The effect of random fluctuations on the Living Planet Index (LPI) for simulated declining populations. Requires the file `IterationOutputCurve.txt`
 * `Figure5`: The distribution of the Living Planet Index (LPI) in 2016 for a null model that reshuffles population trajectories. Requires several output files for the different planetary systems and biogrographical realms.
+
+### Supplementary files folders
+
+This is a folder that includes all the infomation needed for the Supplementary files. It is made up of the following sub-folders:
+
 * `FigureS1`: The nine steps to calculating the Living Planet Index (LPI).
 * `FigureS2`: Generalised additive (GAM) for populations declining from 100 to 40 individuals.
 * `FigureS3`: Generalised additive (GAM) for populations increasing from 100 to 160 individuals.
