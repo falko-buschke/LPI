@@ -80,8 +80,7 @@ for (p in 1:iterations) {
         # Add the reshuffled time-series to the whole matrix of population data
         sim.mat[k,monitor.index] <- new.vect
     }
-}
-warnings()
+  }
 
 
 ##########################################################################
@@ -321,7 +320,6 @@ plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab
 abline(h=1,col="black")
 polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(FW_lpi$CI_low,rev(FW_lpi$CI_high)),col=rgb(0,0.5,1,0.5),border=NA)
 lines(c(1970:plot.end),FW_lpi$LPI_final,col="white",lwd=2)
-
 # This adds the iteration number to the plot, to keep track of the simulation
 text(1995,1.75,paste(p))
 
@@ -333,7 +331,6 @@ text(1995,1.75,paste(p))
 ###
 #
 
-
 ########################
 
 # Terrestrial
@@ -342,49 +339,40 @@ text(1995,1.75,paste(p))
 # Birds
 ##########################################
 
-
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$T_realm!="Palearctic")] <- FALSE
-TR_birds_Pale <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name="X2016", index_vector=ind_vect, 
-	name="Global/TR_birds_Pale")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_birds_Pale <- create_infile(lpi, start_col_name="X1950", end_col_name="X2016", index_vector=ind_vect, name="Global/TR_birds_Pale")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$T_realm!="Afrotropical")] <- FALSE
-TR_birds_Afro <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_birds_Afro")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_birds_Afro <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_birds_Afro")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$T_realm!="Nearctic")] <- FALSE
-TR_birds_Near <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_birds_Near")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_birds_Near <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_birds_Near")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$T_realm!="Neotropical")] <- FALSE
-TR_birds_Neo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_birds_Neo")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_birds_Neo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_birds_Neo")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$T_realm!="Australasia" & lpi$T_realm!="Indo-Malayan" & lpi$T_realm!="Oceania")] <- FALSE
-
-
-TR_birds_Indo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_birds_Indo")
-
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_birds_Indo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_birds_Indo")
 
 ##########################################
 # Mammals
@@ -394,44 +382,36 @@ ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Palearctic")] <- FALSE
-TR_mamm_Pale <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_mamm_Pale")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_mamm_Pale <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_mamm_Pale")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Afrotropical")] <- FALSE
-TR_mamm_Afro <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_mamm_Afro")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_mamm_Afro <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_mamm_Afro")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Nearctic")] <- FALSE
-TR_mamm_Near <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_mamm_Near")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_mamm_Near <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_mamm_Near")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Neotropical")] <- FALSE
-TR_mamm_Neo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_mamm_Neo")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_mamm_Neo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_mamm_Neo")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Australasia" & lpi$T_realm!="Indo-Malayan" & lpi$T_realm!="Oceania")] <- FALSE
-
-
-TR_mamm_Indo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_mamm_Indo")
-
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_mamm_Indo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_mamm_Indo")
 
 ##########################################
 # Herpetofauna
@@ -441,72 +421,58 @@ ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Amphibia" & lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Palearctic")] <- FALSE
-TR_herp_Pale <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_herp_Pale")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_herp_Pale <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_herp_Pale")
 
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Amphibia" & lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Afrotropical")] <- FALSE
-TR_herp_Afro <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_herp_Afro")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_herp_Afro <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_herp_Afro")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Amphibia" & lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Nearctic")] <- FALSE
-TR_herp_Near <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_herp_Near")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_herp_Near <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect,name="Global/TR_herp_Near")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Amphibia" & lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Neotropical")] <- FALSE
-TR_herp_Neo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_herp_Neo")
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_herp_Neo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_herp_Neo")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Terrestrial")] <- FALSE
 ind_vect[which(lpi$Class!="Amphibia" & lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$T_realm!="Australasia" & lpi$T_realm!="Indo-Malayan" & lpi$FW_realm!="Oceania")] <- FALSE
-
-
-TR_herp_Indo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/TR_herp_Indo")
-
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+TR_herp_Indo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/TR_herp_Indo")
 
 ###########################################
 
-
-
+# Once you have filtered out the data and created the infile, you can calculate the LPI for the Teresstrial System globally
 TR_lpi <- LPIMain("Global/TR_infile.txt", PLOT_MAX=max_val, use_weightings_B=1, force_recalculation=0,use_weightings=1, VERBOSE=FALSE)
-ggplot_lpi(TR_lpi, ylims=c(0, 2))
 
-
+# This make a plot for the LPI
 plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
 abline(h=1,col="black")
 polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(TR_lpi$CI_low,rev(TR_lpi$CI_high)),col=rgb(0,0.5,1,0.5),border=NA)
 lines(c(1970:plot.end),TR_lpi$LPI_final,col="white",lwd=2)
+# This adds the iteration number to the plot, to keep track of the simulation
 text(1995,1.75,paste(p))
 
-
-
-
-
-
-#######################3
-
-
-########################
-
-
-########################
+#
+###
+#####
+#######
+#####
+###
+#
 
 # Marine
 
@@ -514,63 +480,47 @@ text(1995,1.75,paste(p))
 # Birds
 ##########################################
 
-
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$M_realm!="Arctic")] <- FALSE
-M_birds_Arctic <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_birds_Arctic")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_birds_Arctic <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_birds_Arctic")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic north temperate")] <- FALSE
-M_birds_ATemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_birds_ATemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_birds_ATemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_birds_ATemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic tropical and subtropical")] <- FALSE
-M_birds_ATrop <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_birds_ATrop")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_birds_ATrop <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_birds_ATrop")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$M_realm!="Pacific north temperate")] <- FALSE
-M_birds_PTemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_birds_PTemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_birds_PTemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_birds_PTemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$M_realm!="South temperate and Antarctic")] <- FALSE
-M_birds_STemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_birds_STemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_birds_STemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_birds_STemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Aves")] <- FALSE
 ind_vect[which(lpi$M_realm!="Tropical and subtropical Indo-Pacific")] <- FALSE
-M_birds_Indo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_birds_Indo")
-table(ind_vect)
-
-
-
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_birds_Indo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_birds_Indo")
 
 ##########################################
 # Mammals
@@ -579,56 +529,43 @@ ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Arctic")] <- FALSE
-M_mamm_Arctic <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_mamm_Arctic")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_mamm_Arctic <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_mamm_Arctic")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic north temperate")] <- FALSE
-M_mamm_ATemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_mamm_ATemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_mamm_ATemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_mamm_ATemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic tropical and subtropical")] <- FALSE
-M_mamm_ATrop <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_mamm_ATrop")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_mamm_ATrop <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_mamm_ATrop")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Pacific north temperate")] <- FALSE
-M_mamm_PTemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_mamm_PTemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_mamm_PTemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_mamm_PTemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$M_realm!="South temperate and Antarctic")] <- FALSE
-M_mamm_STemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_mamm_STemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_mamm_STemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_mamm_STemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Mammalia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Tropical and subtropical Indo-Pacific")] <- FALSE
-M_mamm_Indo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_mamm_Indo")
-table(ind_vect)
-
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_mamm_Indo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_mamm_Indo")
 
 ###########################################
 
@@ -640,58 +577,43 @@ ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Arctic")] <- FALSE
-M_rep_Arctic <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_rep_Arctic")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_rep_Arctic <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_rep_Arctic")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic north temperate")] <- FALSE
-M_rep_ATemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_rep_ATemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_rep_ATemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_rep_ATemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic tropical and subtropical")] <- FALSE
-M_rep_ATrop <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_rep_ATrop")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_rep_ATrop <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_rep_ATrop")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Pacific north temperate")] <- FALSE
-M_rep_PTemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_rep_PTemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_rep_PTemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_rep_PTemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$M_realm!="South temperate and Antarctic")] <- FALSE
-M_rep_STemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_rep_STemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_rep_STemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_rep_STemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
 ind_vect[which(lpi$Class!="Reptilia")] <- FALSE
 ind_vect[which(lpi$M_realm!="Tropical and subtropical Indo-Pacific")] <- FALSE
-M_rep_Indo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_rep_Indo")
-table(ind_vect)
-
-
-
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_rep_Indo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_rep_Indo")
 
 ###########################################
 
@@ -709,10 +631,8 @@ ind_vect[which(lpi$Class!="Actinopteri" &
  	lpi$Class!="Myxini" &
 	lpi$Class!="Petromyzonti")] <- FALSE
 ind_vect[which(lpi$M_realm!="Arctic")] <- FALSE
-M_fish_Arctic <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_fish_Arctic")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_fish_Arctic <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_fish_Arctic")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
@@ -724,10 +644,8 @@ ind_vect[which(lpi$Class!="Actinopteri" &
  	lpi$Class!="Myxini" &
 	lpi$Class!="Petromyzonti")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic north temperate")] <- FALSE
-M_fish_ATemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_fish_ATemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_fish_ATemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_fish_ATemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
@@ -739,10 +657,8 @@ ind_vect[which(lpi$Class!="Actinopteri" &
  	lpi$Class!="Myxini" &
 	lpi$Class!="Petromyzonti")] <- FALSE
 ind_vect[which(lpi$M_realm!="Atlantic tropical and subtropical")] <- FALSE
-M_fish_ATrop <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_fish_ATrop")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_fish_ATrop <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_fish_ATrop")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
@@ -754,10 +670,8 @@ ind_vect[which(lpi$Class!="Actinopteri" &
  	lpi$Class!="Myxini" &
 	lpi$Class!="Petromyzonti")] <- FALSE
 ind_vect[which(lpi$M_realm!="Pacific north temperate")] <- FALSE
-M_fish_PTemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_fish_PTemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_fish_PTemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_fish_PTemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
@@ -769,10 +683,8 @@ ind_vect[which(lpi$Class!="Actinopteri" &
  	lpi$Class!="Myxini" &
 	lpi$Class!="Petromyzonti")] <- FALSE
 ind_vect[which(lpi$M_realm!="South temperate and Antarctic")] <- FALSE
-M_fish_STemp <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_fish_STemp")
-table(ind_vect)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_fish_STemp <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_fish_STemp")
 
 ind_vect <- rep(TRUE,nrow(lpi))
 ind_vect[which(lpi$System!="Marine")] <- FALSE
@@ -784,40 +696,44 @@ ind_vect[which(lpi$Class!="Actinopteri" &
  	lpi$Class!="Myxini" &
 	lpi$Class!="Petromyzonti")] <- FALSE
 ind_vect[which(lpi$M_realm!="Tropical and subtropical Indo-Pacific")] <- FALSE
-M_fish_Indo <- create_infile(lpi, start_col_name="X1950", 
-	end_col_name=end_val, index_vector=ind_vect, 
-	name="Global/M_fish_Indo")
-table(ind_vect)
-table(lpi$T_realm)
+# This creates and save the Infile needed by the LPI function. Must be saved in a folder named "Global" in the working directory.
+M_fish_Indo <- create_infile(lpi, start_col_name="X1950", end_col_name=end_val, index_vector=ind_vect, name="Global/M_fish_Indo")
+
 ###########################################
 
-
-
+# Once you have filtered out the data and created the infile, you can calculate the LPI for the Marine System globally
 MR_lpi <- LPIMain("Global/MR_infile.txt", PLOT_MAX=max_val, use_weightings_B=1, use_weightings=1, VERBOSE=FALSE)
-ggplot_lpi(MR_lpi, ylims=c(0, 2))
 
-
+# This make a plot for the LPI
 plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
 abline(h=1,col="black")
 polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(MR_lpi$CI_low,rev(MR_lpi$CI_high)),col=rgb(0,0.5,1,0.5),border=NA)
 lines(c(1970:plot.end),MR_lpi$LPI_final,col="white",lwd=2)
+# This adds the iteration number to the plot, to keep track of the simulation
 text(1995,1.75,paste(p))
 
 ###########################################
+###########################################
+###########################################
+###########################################
 
-
-
+# Once you have filtered out the data and created the infile, you can calculate the Global LPI
 Global_lpi <- LPIMain("Global/Global_infile.txt", PLOT_MAX=max_val, use_weightings_B=1,use_weightings=1, VERBOSE=FALSE)
-ggplot_lpi(Global_lpi, ylims=c(0, 2))
 
-
+# This make a plot for the LPI
 plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
 abline(h=1,col="black")
 polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(Global_lpi$CI_low,rev(Global_lpi$CI_high)),col=rgb(0,0.5,1,0.5),border=NA)
 lines(c(1970:plot.end),Global_lpi$LPI_final,col="white",lwd=2)
+# This adds the iteration number to the plot, to keep track of the simulation
 text(1995,1.75,paste(p))
 
+###########################################
+###########################################
+###########################################
+###########################################
 
+# Once you have filtered out the data and created the infile, you can calculate the five Biogeographical Realms
 
 Afro_lpi <- LPIMain("Global/Afro_infile.txt", PLOT_MAX=max_val, use_weightings_B=0,use_weightings=1, VERBOSE=FALSE)
 Near_lpi <- LPIMain("Global/Near_infile.txt", PLOT_MAX=max_val, use_weightings_B=0,use_weightings=1, VERBOSE=FALSE)
@@ -825,52 +741,30 @@ Neo_lpi <- LPIMain("Global/Neo_infile.txt", PLOT_MAX=max_val, use_weightings_B=0
 Pale_lpi <- LPIMain("Global/Pale_infile.txt", PLOT_MAX=max_val, use_weightings_B=0,use_weightings=1, VERBOSE=FALSE)
 Indo_lpi <- LPIMain("Global/Indo_infile.txt", PLOT_MAX=max_val, use_weightings_B=0,use_weightings=1, VERBOSE=FALSE)
 
+###########################################
+###########################################
+###########################################
+###########################################
 
-
-
-plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
-abline(h=1,col="black")
-polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(Afro_lpi$CI_low,rev(Afro_lpi$CI_high)),col=rgb(1,1,0,0.5),border=NA)
-lines(c(1970:plot.end),Afro_lpi$LPI_final,col="white",lwd=2)
-text(1995,1.75,paste(p))
-
-plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
-abline(h=1,col="black")
-polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(Near_lpi$CI_low,rev(Near_lpi$CI_high)),col=rgb(0,1,0.5,0.5),border=NA)
-lines(c(1970:plot.end),Near_lpi$LPI_final,col="white",lwd=2)
-text(1995,1.75,paste(p))
-
-plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
-abline(h=1,col="black")
-polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(Neo_lpi$CI_low,rev(Neo_lpi$CI_high)),col=rgb(0.5,0.1,1,0.5),border=NA)
-lines(c(1970:plot.end),Neo_lpi$LPI_final,col="white",lwd=2)
-text(1995,1.75,paste(p))
-
-plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
-abline(h=1,col="black")
-polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(Pale_lpi$CI_low,rev(Pale_lpi$CI_high)),col=rgb(1,0,1,0.5),border=NA)
-lines(c(1970:plot.end),Pale_lpi$LPI_final,col="white",lwd=2)
-text(1995,1.75,paste(p))
-
-plot(0,0,type="n",las=1,xlim=c(1970,2020),ylim=c(0,2),ylab="LPI (1970 = 1)",xlab="Year")
-abline(h=1,col="black")
-polygon(c(seq(1970,plot.end),seq(plot.end,1970)), c(Indo_lpi$CI_low,rev(Indo_lpi$CI_high)),col=rgb(1,0,1,0.5),border=NA)
-lines(c(1970:plot.end),Indo_lpi$LPI_final,col="white",lwd=2)
-text(1995,1.75,paste(p))
-
-
-
+# Save the final LPI estimates for each iteration of the Global LPI
 Global.LPI[p,]  <- Global_lpi$LPI_final
 
+# Save the final LPI estimates for each iteration of the three planetary systems
 Terrestrial.LPI[p,] <- TR_lpi$LPI_final
 Freshwater.LPI[p,] <- FW_lpi$LPI_final
 Marine.LPI[p,] <- MR_lpi$LPI_final
 
+# Save the final LPI estimates for each iteration of the five biogeographical regions
 Afro.LPI[p,] <- Afro_lpi$LPI_final
 Near.LPI[p,] <- Near_lpi$LPI_final
 Neo.LPI[p,] <- Neo_lpi$LPI_final
 Pale.LPI[p,] <- Pale_lpi$LPI_final
 Indo.LPI[p,] <- Indo_lpi$LPI_final
+	
+###########################################
+###########################################
+###########################################
+###########################################	
 
 # Write the global LPI to a text file.
 write.table(Global.LPI,file= "LPI_global_null.txt",	quote=T,sep="\t",row.names=F,col.names=T)
