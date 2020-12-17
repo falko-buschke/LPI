@@ -10,14 +10,14 @@ The code was accurate as of 15 December 2020. For enquiries, contact `falko.busc
 
 This code relies heavily on the population data used in the to calculate the *Living Planet Index*. This data is available from the [dedicated website](http://stats.livingplanetindex.org/) by the **Zoolological Society of London**. The use of this data is restricted by their [data use policy](https://livingplanetindex.org/documents/data_agreement.pdf). Since I am not the owner of these data, I have no record of updates or changes to the dataset.
 
-The code presented here also relies on the deicated `rlpi` package for calculating the *Living Planet Index*. This code is not one the official CRAN repository, so must be accessed and installed directly from the [rlpi GitHub repository](https://github.com/Zoological-Society-of-London/rlpi), which also requires the `devtools` package. The code needed to install these packages is included in the R-scripts.
+The code presented here also relies on the deicated `rlpi` package for calculating the *Living Planet Index*. This code is not on the official CRAN repository, so it must be accessed and installed directly from the [rlpi GitHub repository](https://github.com/Zoological-Society-of-London/rlpi), which also requires the `devtools` package. The code needed to install these packages is included in the R-scripts.
 
 
 ## Repository structure
 
 Most of the code includes dozen of hours of simulations, which are too laborious for a regular personal computer. Therefore, I recommend setting up  several cloud-based [RStudio servers using Amazon Web Services](https://www.louisaslett.com/RStudio_AMI/). 
 
-The code has therefore been devided into folders depending on cloud-based simulations, or desktop-friendly code for recreating the Figures from the manuscript.
+The code has, therefore, been divided into folders depending on cloud-based simulations, or desktop-friendly code for recreating the Figures from the manuscript.
 
 ### Cloud Simulations folder
 
