@@ -9,10 +9,10 @@ library(vioplot)
 ###############################
 
 # Load the Global Living Planet Index
-Global_lpi <-  read.table("LPI_outputs/LPI_global_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Global1 <-  read.table("LPI_outputs/LPI_global_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Global3 <-  read.table("LPI_outputs/LPI_global_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Global5<-  read.table("LPI_outputs/LPI_global_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Global_lpi <-  read.table("Outputs/LPI_global_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Global1 <-  read.table("Outputs/LPI_global_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Global3 <-  read.table("Outputs/LPI_global_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Global5<-  read.table("Outputs/LPI_global_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 
 ###############################
@@ -22,22 +22,22 @@ Global5<-  read.table("LPI_outputs/LPI_global_drift5.txt",header=TRUE,sep="\t", 
 ###############################
 
 # Load the Terrestrial Living Planet Index
-TR_lpi <-  read.table("LPI_outputs/LPI_terrestrial_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-TR1 <-  read.table("LPI_outputs/LPI_terrestrial_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-TR3 <-  read.table("LPI_outputs/LPI_terrestrial_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-TR5 <-  read.table("LPI_outputs/LPI_terrestrial_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+TR_lpi <-  read.table("Outputs/LPI_terrestrial_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+TR1 <-  read.table("Outputs/LPI_terrestrial_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+TR3 <-  read.table("Outputs/LPI_terrestrial_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+TR5 <-  read.table("Outputs/LPI_terrestrial_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 # Load the Freshwater Living Planet Index
-FW_lpi <-  read.table("LPI_outputs/LPI_freshwater_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-FW1 <-  read.table("LPI_outputs/LPI_freshwater_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-FW3 <-  read.table("LPI_outputs/LPI_freshwater_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-FW5 <-  read.table("LPI_outputs/LPI_freshwater_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+FW_lpi <-  read.table("Outputs/LPI_freshwater_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+FW1 <-  read.table("Outputs/LPI_freshwater_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+FW3 <-  read.table("Outputs/LPI_freshwater_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+FW5 <-  read.table("Outputs/LPI_freshwater_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 # Load the Marine Living Planet Index
-MR_lpi <-  read.table("LPI_outputs/LPI_marine_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-MR1 <-  read.table("LPI_outputs/LPI_marine_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-MR3 <-  read.table("LPI_outputs/LPI_marine_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-MR5 <-  read.table("LPI_outputs/LPI_marine_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+MR_lpi <-  read.table("Outputs/LPI_marine_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+MR1 <-  read.table("Outputs/LPI_marine_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+MR3 <-  read.table("Outputs/LPI_marine_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+MR5 <-  read.table("Outputs/LPI_marine_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 
 ###############################
@@ -47,34 +47,34 @@ MR5 <-  read.table("LPI_outputs/LPI_marine_drift5.txt",header=TRUE,sep="\t", na.
 ###############################
 
 # Load the Afrotropics Living Planet Index
-Afro_lpi <-  read.table("LPI_outputs/LPI_Afro_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Afro1 <-  read.table("LPI_outputs/LPI_Afro_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Afro3 <-  read.table("LPI_outputs/LPI_Afro_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Afro5 <-  read.table("LPI_outputs/LPI_Afro_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Afro_lpi <-  read.table("Outputs/LPI_Afro_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Afro1 <-  read.table("Outputs/LPI_Afro_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Afro3 <-  read.table("Outputs/LPI_Afro_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Afro5 <-  read.table("Outputs/LPI_Afro_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 # Load the Nearctic Living Planet Index
-Near_lpi <-  read.table("LPI_outputs/LPI_Near_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Near1 <-  read.table("LPI_outputs/LPI_Near_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Near3 <-  read.table("LPI_outputs/LPI_Near_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Near5 <-  read.table("LPI_outputs/LPI_Near_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Near_lpi <-  read.table("Outputs/LPI_Near_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Near1 <-  read.table("Outputs/LPI_Near_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Near3 <-  read.table("Outputs/LPI_Near_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Near5 <-  read.table("Outputs/LPI_Near_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 # Load the Neotropic Living Planet Index
-Neo_lpi <-  read.table("LPI_outputs/LPI_Neo_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Neo1 <-  read.table("LPI_outputs/LPI_Neo_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Neo3 <-  read.table("LPI_outputs/LPI_Neo_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Neo5 <-  read.table("LPI_outputs/LPI_Neo_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Neo_lpi <-  read.table("Outputs/LPI_Neo_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Neo1 <-  read.table("Outputs/LPI_Neo_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Neo3 <-  read.table("Outputs/LPI_Neo_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Neo5 <-  read.table("Outputs/LPI_Neo_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 # Load the Indo-Pacific Living Planet Index
-Indo_lpi <-  read.table("LPI_outputs/LPI_Indo_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Indo1 <-  read.table("LPI_outputs/LPI_Indo_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Indo3 <-  read.table("LPI_outputs/LPI_Indo_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Indo5 <-  read.table("LPI_outputs/LPI_Indo_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Indo_lpi <-  read.table("Outputs/LPI_Indo_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Indo1 <-  read.table("Outputs/LPI_Indo_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Indo3 <-  read.table("Outputs/LPI_Indo_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Indo5 <-  read.table("Outputs/LPI_Indo_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 # Load the Palearctic Living Planet Index
-Pale_lpi <-  read.table("LPI_outputs/LPI_Pale_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Pale1 <-  read.table("LPI_outputs/LPI_Pale_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Pale3 <-  read.table("LPI_outputs/LPI_Pale_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-Pale5 <-  read.table("LPI_outputs/LPI_Pale_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Pale_lpi <-  read.table("Outputs/LPI_Pale_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Pale1 <-  read.table("Outputs/LPI_Pale_drift1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Pale3 <-  read.table("Outputs/LPI_Pale_drift3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+Pale5 <-  read.table("Outputs/LPI_Pale_drift5.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 
 # Combine all the final LPI values from the empirical data in a single object
