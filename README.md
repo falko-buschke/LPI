@@ -8,7 +8,7 @@ The code was accurate as of 15 December 2020. For enquiries, contact `falko.busc
 
 ## General comments
 
-This code relies heavily on the population data used in the to calculate the *Living Planet Index*. This data is available from the [dedicated website](http://stats.livingplanetindex.org/) by the **Zoolological Society of London**. The use of this data is restricted by their [data use policy](https://livingplanetindex.org/documents/data_agreement.pdf). Since I am not the owner of these data, I have no record of updates or changes to the dataset.
+This code relies heavily on the population data used in the to calculate the *Living Planet Index*. This data is available from the [dedicated website](http://stats.livingplanetindex.org/) by the **Zoological Society of London**. The use of this data is restricted by their [data use policy](https://livingplanetindex.org/documents/data_agreement.pdf). Since I am not the owner of these data, I have no record of updates or changes to the dataset.
 
 The code presented here also relies on the deicated `rlpi` package for calculating the *Living Planet Index*. This code is not on the official CRAN repository, so it must be accessed and installed directly from the [rlpi GitHub repository](https://github.com/Zoological-Society-of-London/rlpi), which also requires the `devtools` package. The code needed to install these packages is included in the R-scripts.
 
