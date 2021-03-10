@@ -24,7 +24,7 @@ for (k in 1:dim(pop.mat)[1]) {
     last.year[k] <- max(as.numeric(years[which(!is.na(pop.mat[k,])==TRUE)]))
     # Starting population size
     start.N[k] <- as.numeric(pop.mat[k,!is.na(pop.mat[k,])][1])
-    Length of time-series
+    # Length of time-series
     ts.length[k] <- as.numeric(length(pop.mat[k,!is.na(pop.mat[k,])]))
   }
 }
