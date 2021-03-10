@@ -1,5 +1,5 @@
 # Define plot name and dimensions
-png(filename="Null_rationale.png",width=24,height=16,units="cm",res=300)
+png(filename="FigureS5.png",width=24,height=16,units="cm",res=300)
 
 # Set plot margins
 par(mai=c(0.65,0.65,0.3,0.05))
