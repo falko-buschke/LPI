@@ -1,3 +1,7 @@
+# Install and load package for GAM model
+install.packages("mgcv")
+library(mgcv)
+
 # Set random seed to replicate stochastic process
 set.seed(33)
 
