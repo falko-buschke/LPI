@@ -29,7 +29,7 @@ FW <-  read.table("LPI_freshwater_null.txt",header=TRUE,sep="\t", na.strings="NA
 
 # Load the data for the empirical and reshuffled marine LPI
 MR_lpi <-  read.table("LPI_marine_empirical.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-MR <-  read.table("LPI_marine_null1.tx",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+MR <-  read.table("LPI_marine_null1.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 
 #####################################
