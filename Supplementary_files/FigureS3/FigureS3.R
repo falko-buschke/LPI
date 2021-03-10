@@ -1,3 +1,7 @@
+# Install and load package for GAM model
+install.packages("mgcv")
+library(mgcv)
+
 # Set up the plot filename and dimensions
 png(filename="Figure S3.png",width=22,height=22,units="cm",res=300)
 
