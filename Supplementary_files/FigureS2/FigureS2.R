@@ -131,7 +131,7 @@ colnames(Drift5) <- c("Global","Terrestrial","Freshwater","Marine",	"Nearctic", 
 cols <- colorRampPalette(c(rgb(0,0,0.5,1),rgb(0,0.8,0.8,1),rgb(1,0.5,0,1)),interpolate="linear")(9)
 
 # Define plot name and dimensions
-png(filename="FigureS4.png",width=20,height=20,units="cm",res=300)
+png(filename="FigureS2.png",width=20,height=20,units="cm",res=300)
 
 # Set 3 X 1 panel outlay
 par(mfrow=c(3,1))
