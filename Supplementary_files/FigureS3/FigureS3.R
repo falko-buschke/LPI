@@ -34,7 +34,7 @@ DV <- start.N[which(start.N > 0)]
 IV <- start.year[which(start.N > 0)]
 
 # Set up plot and dimensions
-png(filename="Figure2.png",width=16,height=16,units="cm",res=300)
+png(filename="FigureS3.png",width=16,height=16,units="cm",res=300)
 
 # Set up plot margins
 par(mai=c(0.75,0.9,0.1,0.1))
