@@ -156,7 +156,7 @@ col1t <- rgb(0,0,0.5,0.4)
 
 
 #Define the plot name and dimensions
-png(filename="C:/Users/Falko/Documents/Living Planet Index/NEE/Revision/Figures/Figure1.png",width=17,height=17,units="cm",res=300)
+png(filename="Figure1.png",width=17,height=17,units="cm",res=300)
 
 # 2 X 2 panels, which specific margins
 par(mfrow=c(2,2))
