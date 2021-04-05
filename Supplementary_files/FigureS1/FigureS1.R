@@ -95,7 +95,8 @@ abline(h=0,col="grey")
 mtext("Step 4: Rate of change",cex=1, side = 3, adj = 0.5, line = -2)
 
 # Add the lambda equation
-text(1995, 0.0125, (expression(lambda == log( frac(N[t+1],N[t])))), cex=1.5)
+text(1995, 0.0125, expression(paste(lambda, "= log ", bgroup("(",frac(N[t+1],N[t]),")"))), cex=1.5)
+
 
 #########################
 #                       # 
