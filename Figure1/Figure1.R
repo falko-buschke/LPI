@@ -156,7 +156,7 @@ col1t <- rgb(0,0,0.5,0.4)
 
 
 #Define the plot name and dimensions
-png(filename="Figure1.png",width=17,height=17,units="cm",res=300)
+png(filename="C:/Users/Falko/Documents/Living Planet Index/NEE/Revision/Figures/Figure1.png",width=17,height=17,units="cm",res=300)
 
 # 2 X 2 panels, which specific margins
 par(mfrow=c(2,2))
@@ -169,7 +169,7 @@ par(mai=c(0.6,0.65,0.4,0.10))
   #############################
 
 # Plot the axes and labels
-plot(0,0,ylim=c(0,200),  type="n", xlim=c(1970,2020), ylab= "Population", xlab="Year",las=1,  cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0))
+plot(0,0,ylim=c(0,200),  type="n", xlim=c(1970,2020), ylab= "Population abundance", xlab="Year",las=1,  cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0))
 
 # Add transparent lines for each population time-series.
 for(k in 1:S){
@@ -244,6 +244,9 @@ legend("bottomright",bg="white",pch=1,col=c(col3,col2,col1),c("N = 150","N = 100
 mtext("c",cex=1.3, side = 3, adj = -0.15, line = 1,font=2)
 
 
+text (-12,0.12, expression(paste(lambda, "= log ", bgroup("(",frac(N[t+1],N[t]),")"))))
+
+
   #############################
   #                           #
   #          Panel D          #
@@ -255,7 +258,7 @@ plot(0,0,type="n",las=1,xlim=c(0.5,5),
      ylim=c(50,300),ylab="Starting population",xlab="Average fluctuation", cex.axis=1.1, cex.lab= 1.3, mgp=c(2.5,0.6,0))
 
 # Read the simulated data needed for the surface plot. Be sure that the file "LPISpace.txt" is saved in your working directory
-space <-  read.table("LPISpace.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+space <-  read.table("LPISpace3.txt",header=TRUE,sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 
 # Creat a series of x, y, and z valuess from the imported dataset
 yval <- rep(seq(50,300,l=50),each=50)
@@ -295,6 +298,3 @@ mtext("d",cex=1.3, side = 3, adj = -0.15, line = 1,font=2)
 
 # Save the plot device
 dev.off()
-
-
-
