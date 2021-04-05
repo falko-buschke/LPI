@@ -3,7 +3,7 @@ install.packages("mgcv")
 library(mgcv)
 
 # Set up the plot filename and dimensions
-png(filename="Figure S2.png",width=22,height=22,units="cm",res=300)
+png(filename="Figure S5.png",width=22,height=22,units="cm",res=300)
 
 # Set plot margins
 par(mai=c(0.5,0.6,0.25,0.05))
