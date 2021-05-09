@@ -2,7 +2,7 @@
 
 Effect of population fluctuations on the Living Planet Index. This repository includes all the code used in the manuscript:
 
-* Buschke, F.T., Hagan, J.G. Santini, L. & Coetzee, B.W.T. (unpublished) *Random population fluctuations bias the Living Planet Index*.
+* Buschke, F.T., Hagan, J.G. Santini, L. & Coetzee, B.W.T. *Random population fluctuations bias the Living Planet Index*.
 
 The code was accurate as of 05 April 2021. For enquiries, contact `falko.buschk@gmail.com`
 
