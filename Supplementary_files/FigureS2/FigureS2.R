@@ -89,37 +89,37 @@ Obs <- cbind(Global_lpi$LPI_final[dim(Global_lpi)[1]],
 			Indo_lpi$LPI_final[dim(Global_lpi)[1]])
 
 # Combine all the final LPI values from the 1 % drift data in a single object
-Drift1 <- cbind(Global1[,dim(Global)[2]],
-			TR1[,dim(TR)[2]],
-			FW1[,dim(FW)[2]],
-			MR1[,dim(MR)[2]],
-			Near1[,dim(Near)[2]],
-			Neo1[,dim(Neo)[2]],
-			Pale1[,dim(Pale)[2]],
-			Afro1[,dim(Afro)[2]],
-			Indo1[,dim(Indo)[2]])
+Drift1 <- cbind(Global1[,dim(Global1)[2]],
+			TR1[,dim(TR1)[2]],
+			FW1[,dim(FW1)[2]],
+			MR1[,dim(MR1)[2]],
+			Near1[,dim(Near1)[2]],
+			Neo1[,dim(Neo1)[2]],
+			Pale1[,dim(Pale1)[2]],
+			Afro1[,dim(Afro1)[2]],
+			Indo1[,dim(Indo1)[2]])
 
 # Combine all the final LPI values from the 3 % drift data in a single object
-Drift3 <- cbind(Global3[,dim(Global)[2]],
-			TR3[,dim(TR)[2]],
-			FW3[,dim(FW)[2]],
-			MR3[,dim(MR)[2]],
-			Near3[,dim(Near)[2]],
-			Neo3[,dim(Neo)[2]],
-			Pale3[,dim(Pale)[2]],
-			Afro3[,dim(Afro)[2]],
-			Indo3[,dim(Indo)[2]])
+Drift3 <- cbind(Global3[,dim(Global3)[2]],
+			TR3[,dim(TR3)[2]],
+			FW3[,dim(FW3)[2]],
+			MR3[,dim(M3R)[2]],
+			Near3[,dim(Near3)[2]],
+			Neo3[,dim(Neo3)[2]],
+			Pale3[,dim(Pale3)[2]],
+			Afro3[,dim(Afro3)[2]],
+			Indo3[,dim(Indo3)[2]])
 
 # Combine all the final LPI values from the 5 % drift data in a single object
-Drift5 <- cbind(Global5[,dim(Global)[2]],
-			TR5[,dim(TR)[2]],
-			FW5[,dim(FW)[2]],
-			MR5[,dim(MR)[2]],
-			Near5[,dim(Near)[2]],
-			Neo5[,dim(Neo)[2]],
-			Pale5[,dim(Pale)[2]],
-			Afro5[,dim(Afro)[2]],
-			Indo5[,dim(Indo)[2]])
+Drift5 <- cbind(Global5[,dim(Global5)[2]],
+			TR5[,dim(TR5)[2]],
+			FW5[,dim(FW5)[2]],
+			MR5[,dim(MR5)[2]],
+			Near5[,dim(Near5)[2]],
+			Neo5[,dim(Neo5)[2]],
+			Pale5[,dim(Pale5)[2]],
+			Afro5[,dim(Afro5)[2]],
+			Indo5[,dim(Indo5)[2]])
 
 # Add columns names to the dirft objects
 colnames(Drift1) <- c("Global","Terrestrial","Freshwater","Marine","Nearctic", "Neotropical", "Palearctic", "Afrotropical", "Indo-Pacific")
